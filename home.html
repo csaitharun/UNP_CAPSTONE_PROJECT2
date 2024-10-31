@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #d9e4d1; /* Pastel olive green background */
+            color: #333333; /* Dark text color for readability */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White container background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333333; /* Dark text */
+            background: linear-gradient(135deg, #fa8072, #ff9999); /* Gradient for salmon pink */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 3D effect with shadow */
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #666666; /* Light grey for labels */
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc; /* Light grey border */
+            border-radius: 4px;
+            background-color: #f4f4f4; /* Light grey input background */
+            color: #333333; /* Dark text for input */
+        }
+        .form-group button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #ffffff; /* White text */
+            background-color: #fa8072; /* Salmon pink button */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Button shadow */
+            transition: background 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #ff9999; /* Lighter salmon pink on hover */
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 15px;
+            border: 1px solid #cccccc; /* Light grey border */
+            border-radius: 4px;
+            background-color: #f9f9f9; /* Very light background for result */
+            color: #333333; /* Dark text for result */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Churn Prediction</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="query1">Call Failure:</label>
+                <input type="text" id="query1" name="query1" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query2">Complains(0: No complaint, 1: complaint)</label>
+                <input type="text" id="query2" name="query2" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query3">Subscription Length:</label>
+                <input type="text" id="query3" name="query3" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query4">Charge Amount(0: lowest amount, 9: highest amount)</label>
+                <input type="text" id="query4" name="query4" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query5">Seconds of Use:</label>
+                <input type="text" id="query5" name="query5" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query6">Frequency of use:</label>
+                <input type="text" id="query6" name="query6" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query7">Frequency of SMS:</label>
+                <input type="text" id="query7" name="query7" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query8">Distinct Called Numbers:</label>
+                <input type="text" id="query8" name="query8" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query9">Age Group(1: younger age, 5: older age)</label>
+                <input type="text" id="query9" name="query9" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query10">Tariff Plan(1: Pay as you go, 2: contractual)</label>
+                <input type="text" id="query10" name="query10" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query11">Status(1: active, 2: non-active)</label>
+                <input type="text" id="query11" name="query11" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query12">Age:</label>
+                <input type="text" id="query12" name="query12" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="query13">Customer Value:</label>
+                <input type="text" id="query13" name="query13" value="" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+
+        <div class="result">
+            <p>{{ output1 }}</p>
+            <p>{{ output2 }}</p>
+        </div>       
+    </div>
+</body>
+</html>
